@@ -446,24 +446,24 @@ useEffect(() => {
               </p>
 
               <p className="text-justify">
-                Mi querida amor, en este día quiero decirte que estos dos años a tu lado
-                han sido los más hermosos de mi vida. Cada momento compartido contigo
-                se ha convertido en un tesoro invaluable que guardo en mi corazón.
-              </p>
+  Quiero expresarte todo lo que mi corazón siente por ti. Ha pasado tanto tiempo desde que nos conocimos, que recuerdo desde la primera sensación linda que me hiciste sentir. Aunque fue rara, porque no estaba acostumbrado, no podía dejar de pensar en eso tan bonito que sentí. Gracias a la vida, pude lograr encontrarme contigo, y te fuiste adentrando cada vez más fuerte en mi corazón, hasta el punto de que nunca podrás salir de él.
+</p>
 
-              <p className="text-justify">
-                Tu sonrisa ilumina mis días más oscuros, tu risa es la melodía más
-                hermosa que conozco, y tu amor es el regalo más preciado que la vida
-                me ha dado. Contigo he aprendido que el amor verdadero no solo existe
-                en los cuentos, sino que vive en cada pequeño gesto, en cada mirada
-                cómplice, en cada abrazo sincero.
-              </p>
+<p className="text-justify">
+  Te he visto crecer, me has visto crecer, en estos dos años que hemos estado juntos, y soy el más feliz por haberte encontrado, por haber encontrado a una chica que, aparte de hermosa, es muy trabajadora y que vale todo el oro del mundo. Créeme que jamás en la vida quiero perderte, nunca quiero que nos separemos, porque yo ya hice mi vida contigo. Tú eres mi futuro, tú eres mis planes en la vida, tú eres mi familia.
+</p>
 
-              <p className="text-justify">
-                Hoy celebramos no solo dos años juntos, sino también la promesa de
-                muchos más años llenos de aventuras, risas, sueños compartidos y
-                un amor que crece cada día más fuerte.
-              </p>
+<p className="text-justify">
+  Pueden venir malos momentos en los que no nos entendamos, pero mi corazón siempre buscará una solución para poder seguir y hacerte feliz, porque esa es mi meta: hacerte sentir amada, hacerte reír, acompañarte en los días malos, celebrar contigo cuando la vida te hace ver lo valiosa que eres y te pones feliz por tus logros. Le ruego mucho a la vida que me siga permitiendo estar a tu lado, porque no me veo de ninguna otra forma que no sea contigo. Mi corazón siempre me hará ser una mejor persona por tu amor. Por eso, puedo decir que he logrado conocer el verdadero amor de mi vida. Por toda la eternidad, siempre serás tú y nadie más que tú.
+</p>
+
+<p className="text-justify">
+  Hoy quiero celebrar contigo y con la vida por estar en este momento juntos, sentados uno al lado del otro, compartiendo risas y sensaciones de amor y paz dentro nuestro. Hay que vivir y amar con todo lo que se pueda. Eso hago yo por ti. Tú me ves ahorita a tu lado, y seguirán siendo más momentos que sumo en tu corazón, que sigan aumentando más momentos en nuestras vidas, más sueños compartidos, y haciendo este amor cada vez más fuerte.
+</p>
+
+<p className="text-justify">
+  Yo seré la persona que siempre se va a morir de amor por ti, que se va a preocupar por todo lo que siente tu corazón, por las cosas que tal vez no cuentas y las tienes dentro tuyo, pero estaré aquí para que llores en mi hombro, para recordarte lo mucho que vales. Recuerda que eres hermosa siendo feliz.
+</p>
 
               <p className="text-center text-rose-200 text-xl font-bold mt-8">
                 Te amo más de lo que las palabras pueden expresar
