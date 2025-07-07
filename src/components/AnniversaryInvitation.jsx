@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Heart, MapPin, Lock, Music, Play, Pause } from 'lucide-react';
+// En la parte superior de tu archivo (después de los imports)
+//import Head from 'next/head';
 
 const AnniversaryInvitation = () => {
   const [currentSection, setCurrentSection] = useState('invitation');
@@ -101,9 +103,29 @@ const AnniversaryInvitation = () => {
               <div className="text-6xl font-bold text-rose-300 mb-4 animate-bounce">
                 2 Años
               </div>
-              <p className="text-rose-100 text-lg font-light leading-relaxed">
-                Una cordial invitación para la mujer más hermosa que existe
-              </p>
+              
+
+<div className="max-w-xs mx-auto space-y-3 px-5 py-4 bg-white/10 rounded-lg border border-rose-200/30 backdrop-blur-xs">
+  {[
+    "Una cordial invitación para la mujer que ilumina mi vida con solo una sonrisa",
+    "Mañana quiero verte, abrazarte y ver tu belleza que cada día me enamora más",
+    "Te invito con todo mi corazón… ven tan hermosa como siempre, o aún más, si eso es posible"
+  ].map((text, index) => (
+    <p 
+      key={index}
+      className="text-lg leading-tight text-rose-50"
+      style={{
+        fontFamily: "'Great Vibes', cursive",
+        textShadow: '0 0 5px rgba(255, 182, 193, 0.7)',
+        letterSpacing: '0.5px'
+      }}
+    >
+      {text}
+    </p>
+  ))}
+</div>
+
+
             </div>
 
             {/* Detalles de la cita */}
