@@ -113,7 +113,7 @@ const AnniversaryInvitation = () => {
                   <span className="text-2xl">🕔</span>
                 </div>
                 <div>
-                  <p className="font-semibold">Te paso recogiendo</p>
+                  <p className="font-semibold">Te pasare recogiendo</p>
                   <p className="text-rose-200">5:00 PM - Día Lunes</p>
                 </div>
               </div>
@@ -160,7 +160,7 @@ const AnniversaryInvitation = () => {
 
                 <div>
                   <label className="block text-rose-200 text-sm font-medium mb-2">
-                    Palabra clave del corazón
+                    Palabra clave especial
                   </label>
                   <input
                     type="password"
