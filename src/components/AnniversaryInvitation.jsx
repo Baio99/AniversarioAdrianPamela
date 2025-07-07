@@ -7,7 +7,11 @@ const AnniversaryInvitation = () => {
   const [errors, setErrors] = useState({});
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
+  const [showFirstGift, setShowFirstGift] = useState(false);
+  const [showSecondGift, setShowSecondGift] = useState(false);
   const videoRefs = useRef([]);
+  const audioRef = useRef(null);
+const [volume, setVolume] = useState(0.3); // Volumen inicial al 30%
 
  const mediaSections = [
   {
@@ -175,12 +179,14 @@ const AnniversaryInvitation = () => {
   };
 
  useEffect(() => {
-    if (currentSection === 'love-letter') {
-      // Pausar todos los videos al cambiar de sección
-      videoRefs.current.forEach(video => {
-        if (video) video.pause();
-      });
-
+     if (currentSection === 'love-letter') {
+    // Iniciar la música
+    if (audioRef.current) {
+      audioRef.current.volume = volume;
+      if (isPlaying) {
+        audioRef.current.play().catch(e => console.log("Error al reproducir audio:", e));
+      }
+    }
       // Configurar IntersectionObserver para lazy loading de videos
       const observer = new IntersectionObserver(
         (entries) => {
@@ -224,21 +230,37 @@ const AnniversaryInvitation = () => {
       });
 
       return () => {
-        videoRefs.current.forEach(video => {
-          if (video) observer.unobserve(video);
-        });
-      };
-    }
-  }, [currentSection]);
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+      videoRefs.current.forEach(video => {
+        if (video) observer.unobserve(video);
+      });
+    };
+  }
+}, [currentSection, isPlaying, volume]);
 
   const toggleMusic = () => {
-    setIsPlaying(!isPlaying);
-  };
+  if (audioRef.current) {
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play().catch(e => console.log("Error al reproducir:", e));
+    }
+  }
+  setIsPlaying(!isPlaying);
+};
 
   if (currentSection === 'invitation') {
     return (
       <div className="min-h-screen bg-gradient-to-br from-rose-900 via-pink-900 to-purple-900 flex items-center justify-center p-4 relative overflow-hidden">
         {/* Partículas flotantes */}
+        {/* Elemento de audio oculto */}
+    <audio 
+      ref={audioRef}
+      loop
+      src="https://Baio99.github.io/AniversarioAdrianPamela/media/StopWaiting.mp3"
+    />
         <div className="absolute inset-0 overflow-hidden">
           {[...Array(50)].map((_, i) => (
             <div
@@ -410,14 +432,26 @@ const AnniversaryInvitation = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-rose-900 via-pink-900 to-purple-900 relative overflow-hidden">
       {/* Control de música */}
-      <div className="fixed top-4 right-4 z-50">
-        <button
-          onClick={toggleMusic}
-          className="bg-white/20 backdrop-blur-sm rounded-full p-3 text-white hover:bg-white/30 transition-all duration-300 shadow-lg"
-        >
-          {isPlaying ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6" />}
-        </button>
-      </div>
+     <div className="fixed top-4 right-4 z-50 flex items-center gap-2">
+  <button
+    onClick={toggleMusic}
+    className="bg-white/20 backdrop-blur-sm rounded-full p-3 text-white hover:bg-white/30 transition-all duration-300 shadow-lg"
+  >
+    {isPlaying ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6" />}
+  </button>
+  <input
+    type="range"
+    min="0"
+    max="1"
+    step="0.01"
+    value={volume}
+    onChange={(e) => {
+      setVolume(parseFloat(e.target.value));
+      if (audioRef.current) audioRef.current.volume = parseFloat(e.target.value);
+    }}
+    className="w-24 accent-rose-400"
+  />
+</div>
 
       {/* Partículas flotantes */}
       <div className="absolute inset-0 overflow-hidden">
@@ -572,6 +606,77 @@ const AnniversaryInvitation = () => {
     </div>
   ))}
 </div>
+
+
+{/* Sección de regalos sorpresa */}
+<div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/20 mt-8 animate-fade-in">
+  <h3 className="text-2xl font-bold text-white text-center mb-8 font-serif">
+    Sorpresas Especiales Para Ti
+  </h3>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {/* Primer regalo */}
+    <div className="relative bg-gradient-to-br from-pink-500/20 to-rose-500/20 rounded-2xl p-6 overflow-hidden">
+      <div className="absolute inset-0 bg-white/5 backdrop-blur-xs"></div>
+      <div className="relative z-10">
+        <button 
+          onClick={() => setShowFirstGift(!showFirstGift)}
+          className="w-full bg-gradient-to-r from-rose-400 to-pink-500 text-white font-bold py-4 px-6 rounded-xl transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl mb-4"
+        >
+          <span className="flex items-center justify-center space-x-2">
+            <Heart className="w-5 h-5" />
+            <span>Presiona aquí para ver tu primer regalo</span>
+          </span>
+        </button>
+        
+        {showFirstGift && (
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 animate-fade-in">
+            <p className="text-white text-lg mb-2">🎁 Tu primer regalo está...</p>
+            <p className="text-rose-200 font-bold text-xl">¡En el bolsillo izquierdo de mi pantalón!</p>
+            <p className="text-white mt-2">Es algo pequeño pero lleno de significado, como nuestro amor.</p>
+            <div className="flex justify-center mt-4">
+              <Heart className="w-8 h-8 text-rose-300 animate-pulse" />
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+
+    {/* Segundo regalo */}
+    <div className="relative bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl p-6 overflow-hidden">
+      <div className="absolute inset-0 bg-white/5 backdrop-blur-xs"></div>
+      <div className="relative z-10">
+        <button 
+          onClick={() => setShowSecondGift(!showSecondGift)}
+          className="w-full bg-gradient-to-r from-purple-400 to-pink-500 text-white font-bold py-4 px-6 rounded-xl transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl mb-4"
+        >
+          <span className="flex items-center justify-center space-x-2">
+            <Heart className="w-5 h-5" />
+            <span>Presiona aquí para ver tu segundo regalo</span>
+          </span>
+        </button>
+        
+        {showSecondGift && (
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 animate-fade-in">
+            <p className="text-white text-lg mb-2">🌹 Tu segundo regalo está...</p>
+            <p className="text-rose-200 font-bold text-xl">¡Escondido dentro de las rosas que te daré!</p>
+            <p className="text-white mt-2">Es algo tan especial como tú, que ilumina mi vida cada día.</p>
+            <div className="flex justify-center mt-4">
+              <Heart className="w-8 h-8 text-purple-300 animate-pulse" />
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+
+  <div className="text-center mt-8">
+    <p className="text-rose-200 italic">Espero que te gusten estas pequeñas sorpresas, mi amor</p>
+    <p className="text-white mt-2">Cada detalle es pensado con todo mi cariño para ti</p>
+  </div>
+</div>
+
+
         
       </div>
 
@@ -594,6 +699,8 @@ const AnniversaryInvitation = () => {
         }
       `}</style>
     </div>
+
+    
   );
 };
 
