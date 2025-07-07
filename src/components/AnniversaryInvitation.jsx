@@ -124,7 +124,7 @@ const AnniversaryInvitation = () => {
                 </div>
                 <div>
                   <p className="font-semibold">Lugar de la cita</p>
-                  <p className="text-rose-200 italic">🗺️ Incógnita... ¿Lo descubrirás?</p>
+                  <p className="text-rose-200 italic">🗺️ Incógnita... Es sorpresa</p>
                 </div>
               </div>
             </div>
@@ -134,14 +134,14 @@ const AnniversaryInvitation = () => {
               <div className="text-center mb-6">
                 <Lock className="w-8 h-8 text-rose-300 mx-auto mb-2" />
                 <p className="text-rose-100 text-sm">
-                  Descifra los secretos para continuar
+                  Descifra los secretos para continuar, los tendras el dia de mañana
                 </p>
               </div>
 
               <div className="space-y-4">
                 <div>
                   <label className="block text-rose-200 text-sm font-medium mb-2">
-                    ¿Dónde te llevé la primera vez?
+                    ¿Lugar donde te llevé?
                   </label>
                   <input
                     type="text"
