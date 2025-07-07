@@ -10,17 +10,63 @@ const AnniversaryInvitation = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
 
-  // Archivos multimedia locales
-  const mediaItems = [
-    { type: 'image', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023primermes.jpg', alt: 'Nuestro primer encuentro' },
-    { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/carta.mp4', alt: 'Momentos especiales' },
-    { type: 'image', src: 'https://Baio99.github.io/AniversarioAdrianPamela/public/media/logo192.png', alt: 'Día en la playa' },
-    { type: 'image', src: '/media/foto3.jpg', alt: 'Cena romántica' },
-    { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/cartanewr.mp4', alt: 'Nuestra aventura' },
-    { type: 'image', src: '/media/foto4.jpg', alt: 'Atardecer juntos' },
-    { type: 'image', src: '/media/foto5.jpg', alt: 'Sonrisas compartidas' },
-    { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/bailepamer.mp4', alt: 'Baile romántico' },
-  ];
+  const mediaSections = [
+  {
+    title: "Nosotros 2023",
+    items: [
+      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/Inicio2023.mp4', alt: 'Primer video' },
+      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023primervideo.mp4', alt: 'Primeros Momentos' },
+      { type: 'image', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023primermes.jpg', alt: 'Nuestro primer mes' },
+      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023-09-teleferico.mp4', alt: 'Paseo Teleferico' },
+      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023-09-rio.mp4', alt: 'Paseo cascadas' },
+      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023-10baile.mp4', alt: 'Aprendiendo a bailar salsa' },
+      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/bigboy2023.mp4', alt: 'Big boy' },
+      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023-11-parque.mp4', alt: 'era de clases' },
+      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023-12patascaminadas.mp4', alt: 'conocimos el metro' },
+      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/navidad2023.mp4', alt: 'conocimos el metro' },
+      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023-12fin.mp4', alt: 'Momentos especiales' },
+      // Agrega más items de 2023 aquí
+    ]
+  },
+  {
+    title: "Nosotros 2024",
+    items: [
+      { type: 'image', src: 'https://Baio99.github.io/AniversarioAdrianPamela/public/media/logo192.png', alt: 'Día en la playa' },
+      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-02cumple.mp4', alt: 'Cumple 2023 de ti mi hermosa' },
+      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/bailepamer.mp4', alt: 'bailesin' },
+      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-04-saludoguanaba.mp4', alt: 'Saludo' },
+      { type: 'image', src: 'https://Baio99.github.io/AniversarioAdrianPamela/public/media/2024Paseo.png', alt: 'Paseo guabana republic' },
+      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-centro.mp4', alt: 'En en centro con una quiteña linda de apellifo Ger' },
+      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-06-cerro.mp4', alt: 'En la montañita con un angelito' },
+      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-06-montana.mp4', alt: 'Tarde de piscina' },
+      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-07-primerano', alt: 'Nuestro Primer año del gran amor nuestro' },
+      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-08-graduacion', alt: 'Acompañandote feliz y orgulloso de verte graduada' },
+      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-12-navidad', alt: 'Celebracion de navidad a mi reina linda' },
+    ]
+  },
+  {
+    title: "Nuestras primeras veces",
+    items: [
+      { type: 'image', src: '/media/foto3.jpg', alt: 'Cena romántica' },
+      { type: 'image', src: '/media/foto4.jpg', alt: 'Atardecer juntos' },
+      // Agrega más "primeras veces" aquí
+    ]
+  },
+  {
+    title: "Nuestros primeros días",
+    items: [
+      { type: 'image', src: '/media/foto5.jpg', alt: 'Sonrisas compartidas' },
+      // Agrega más items de primeros días aquí
+    ]
+  },
+  {
+    title: "Actualmente",
+    items: [
+      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/bailepamer.mp4', alt: 'Baile romántico' },
+      // Agrega más items actuales aquí
+    ]
+  }
+];
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -49,15 +95,18 @@ const AnniversaryInvitation = () => {
     }
   };
 
-  useEffect(() => {
-    if (currentSection === 'love-letter') {
-      // Cambiar medios cada 4 segundos
-      const interval = setInterval(() => {
-        setCurrentMediaIndex(prev => (prev + 1) % mediaItems.length);
-      }, 4000);
-      return () => clearInterval(interval);
-    }
-  }, [currentSection]);
+useEffect(() => {
+  if (currentSection === 'love-letter') {
+    // Calcula el total de items en todas las secciones
+    const totalItems = mediaSections.reduce((sum, section) => sum + section.items.length, 0);
+    
+    const interval = setInterval(() => {
+      setCurrentMediaIndex(prev => (prev + 1) % totalItems);
+    }, 4000);
+    
+    return () => clearInterval(interval);
+  }
+}, [currentSection]);
 
   const toggleMusic = () => {
     setIsPlaying(!isPlaying);
@@ -314,79 +363,90 @@ const AnniversaryInvitation = () => {
         </div>
 
         {/* Álbum de fotos y videos */}
-        <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/20">
-          <h3 className="text-2xl font-bold text-white text-center mb-8 font-serif">
-            Nuestros Recuerdos
-          </h3>
+        {/* Álbum de fotos y videos por secciones */}
+<div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/20">
+  <h3 className="text-2xl font-bold text-white text-center mb-8 font-serif">
+    Nuestros Recuerdos
+  </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {mediaItems.map((item, index) => (
-              <div
-                key={index}
-                className={`relative rounded-2xl overflow-hidden shadow-lg transform transition-all duration-700 hover:scale-105 ${index === currentMediaIndex ? 'ring-4 ring-rose-400 scale-105' : ''
-                  }`}
-                style={{
-                  animationDelay: `${index * 0.2}s`,
-                  animationDuration: '1s'
-                }}
-              ><div className="aspect-square overflow-hidden relative">  {/* Añadido relative aquí */}
-                  {item.type === 'image' ? (
-                    <img
-                      src={item.src}
-                      alt={item.alt}
-                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                        e.target.nextSibling.style.display = 'flex';
-                      }}
-                    />
-                  ) : (
-                    <video
-                      src={item.src}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="absolute top-0 left-0 w-full h-full object-contain bg-black"  // Cambiado a object-contain y añadido bg-black
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                        e.target.nextSibling.style.display = 'flex';
-                      }}
-                    />
-                  )}
-
-                  {/* Fallback en caso de error */}
-                  <div className="w-full h-full bg-gradient-to-br from-rose-400 to-pink-400 flex items-center justify-center" style={{ display: 'none' }}>
-                    <span className="text-white text-6xl">
-                      {item.type === 'image' ? '📸' : '🎥'}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-
-                <div className="absolute bottom-4 left-4 right-4">
-                  <p className="text-white text-sm font-medium drop-shadow-lg">
-                    {item.alt}
-                  </p>
-                </div>
-
-                {item.type === 'video' && (
-                  <div className="absolute top-4 right-4">
-                    <div className="bg-white/20 backdrop-blur-sm rounded-full p-2 animate-pulse">
-                      <Play className="w-4 h-4 text-white" />
-                    </div>
-                  </div>
-                )}
-
-                {/* Overlay romántico */}
-                <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-rose-500/20 to-pink-500/20 flex items-center justify-center">
-                  <Heart className="w-8 h-8 text-white animate-pulse" />
+  {mediaSections.map((section, sectionIndex) => (
+    <div key={sectionIndex} className="mb-12 last:mb-0">
+      {/* Título de la sección */}
+      <h4 className="text-xl font-bold text-rose-300 mb-6 pb-2 border-b border-rose-300/30 font-serif">
+        {section.title}
+      </h4>
+      
+      {/* Grid de multimedia */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {section.items.map((item, itemIndex) => (
+          <div
+            key={itemIndex}
+            className={`relative rounded-2xl overflow-hidden shadow-lg transform transition-all duration-700 hover:scale-105 ${
+              currentMediaIndex === sectionIndex * 100 + itemIndex ? 
+              'ring-4 ring-rose-400 scale-105' : ''
+            }`}
+          >
+            <div className="aspect-square overflow-hidden relative">
+              {item.type === 'image' ? (
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+              ) : (
+                <video
+                  src={item.src}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute top-0 left-0 w-full h-full object-contain bg-black"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+              )}
+              
+              {/* Fallback en caso de error */}
+              <div className="w-full h-full bg-gradient-to-br from-rose-400 to-pink-400 flex items-center justify-center" style={{ display: 'none' }}>
+                <span className="text-white text-6xl">
+                  {item.type === 'image' ? '📸' : '🎥'}
+                </span>
+              </div>
+            </div>
+            
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+            
+            <div className="absolute bottom-4 left-4 right-4">
+              <p className="text-white text-sm font-medium drop-shadow-lg">
+                {item.alt}
+              </p>
+            </div>
+            
+            {item.type === 'video' && (
+              <div className="absolute top-4 right-4">
+                <div className="bg-white/20 backdrop-blur-sm rounded-full p-2 animate-pulse">
+                  <Play className="w-4 h-4 text-white" />
                 </div>
               </div>
-            ))}
+            )}
+            
+            {/* Overlay romántico */}
+            <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-rose-500/20 to-pink-500/20 flex items-center justify-center">
+              <Heart className="w-8 h-8 text-white animate-pulse" />
+            </div>
           </div>
-        </div>
+        ))}
+      </div>
+    </div>
+  ))}
+</div>
+        
       </div>
 
       <style jsx>{`
