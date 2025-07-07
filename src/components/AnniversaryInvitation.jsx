@@ -10,60 +10,175 @@ const AnniversaryInvitation = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
 
-  const mediaSections = [
+ const mediaSections = [
   {
     title: "Nosotros 2023",
     items: [
-      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/Inicio2023.mp4', alt: 'Primer video' },
-      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023primervideo.mp4', alt: 'Primeros Momentos' },
-      { type: 'image', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023primermes.jpg', alt: 'Nuestro primer mes' },
-      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023-09-teleferico.mp4', alt: 'Paseo Teleferico' },
-      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023-09-rio.mp4', alt: 'Paseo cascadas' },
-      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023-10baile.mp4', alt: 'Aprendiendo a bailar salsa' },
-      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/bigboy2023.mp4', alt: 'Big boy' },
-      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023-11-parque.mp4', alt: 'era de clases' },
-      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023-12patascaminadas.mp4', alt: 'conocimos el metro' },
-      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/navidad2023.mp4', alt: 'conocimos el metro' },
-      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023-12fin.mp4', alt: 'Momentos especiales' },
-      // Agrega más items de 2023 aquí
+      { 
+        type: 'video', 
+        src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/Inicio2023-compressed.mp4', 
+        alt: 'Primer video',
+        poster: 'https://Baio99.github.io/AniversarioAdrianPamela/media/Inicio2023-poster.jpg' 
+      },
+      { 
+        type: 'video', 
+        src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023primervideo-compressed.mp4', 
+        alt: 'Primeros Momentos',
+        poster: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023primervideo-poster.jpg' 
+      },
+      { 
+        type: 'image', 
+        src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023primermes.jpg', 
+        alt: 'Nuestro primer mes' 
+      },
+      { 
+        type: 'video', 
+        src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023-09-telferico-compressed.mp4', 
+        alt: 'Paseo Teleferico',
+        poster: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023-09-telferico-poster.jpg' 
+      },
+      { 
+        type: 'video', 
+        src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023-09-rio-compressed.mp4', 
+        alt: 'Paseo cascadas',
+        poster: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023-09-rio-poster.jpg' 
+      },
+      { 
+        type: 'video', 
+        src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023-10baile-compressed.mp4', 
+        alt: 'Aprendiendo a bailar salsa',
+        poster: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023-10baile-poster.jpg' 
+      },
+      { 
+        type: 'video', 
+        src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/bigboy2023-compressed.mp4', 
+        alt: 'Big boy',
+        poster: 'https://Baio99.github.io/AniversarioAdrianPamela/media/bigboy2023-poster.jpg' 
+      },
+      { 
+        type: 'video', 
+        src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023-11-parque-compressed.mp4', 
+        alt: 'era de clases',
+        poster: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023-11-parque-poster.jpg' 
+      },
+      { 
+        type: 'video', 
+        src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023-12patascaminadas-compressed.mp4', 
+        alt: 'conocimos el metro',
+        poster: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023-12patascaminadas-poster.jpg' 
+      },
+      { 
+        type: 'video', 
+        src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/navidad2023-compressed.mp4', 
+        alt: 'Navidad 2023',
+        poster: 'https://Baio99.github.io/AniversarioAdrianPamela/media/navidad2023-poster.jpg' 
+      },
+      { 
+        type: 'video', 
+        src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023-12fin-compressed.mp4', 
+        alt: 'Nuestro fin de Año',
+        poster: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023-12fin-poster.jpg' 
+      },
     ]
   },
   {
     title: "Nosotros 2024",
     items: [
-      { type: 'image', src: 'https://Baio99.github.io/AniversarioAdrianPamela/public/media/logo192.png', alt: 'Día en la playa' },
-      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-02cumple.mp4', alt: 'Cumple 2023 de ti mi hermosa' },
-      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/bailepamer.mp4', alt: 'bailesin' },
-      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-04-saludoguanaba.mp4', alt: 'Saludo' },
-      { type: 'image', src: 'https://Baio99.github.io/AniversarioAdrianPamela/public/media/2024Paseo.png', alt: 'Paseo guabana republic' },
-      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-centro.mp4', alt: 'En en centro con una quiteña linda de apellifo Ger' },
-      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-06-cerro.mp4', alt: 'En la montañita con un angelito' },
-      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-06-montana.mp4', alt: 'Tarde de piscina' },
-      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-07-primerano', alt: 'Nuestro Primer año del gran amor nuestro' },
-      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-08-graduacion', alt: 'Acompañandote feliz y orgulloso de verte graduada' },
-      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-12-navidad', alt: 'Celebracion de navidad a mi reina linda' },
+      { 
+        type: 'video', 
+        src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-02cumple-compressed.mp4', 
+        alt: 'Cumple 2023 de ti mi hermosa',
+        poster: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-02cumple-poster.jpg' 
+      },
+      { 
+        type: 'video', 
+        src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/bailepamer-compressed.mp4', 
+        alt: 'bailesin',
+        poster: 'https://Baio99.github.io/AniversarioAdrianPamela/media/bailepamer-poster.jpg' 
+      },
+      { 
+        type: 'video', 
+        src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-04-saludoguanaba-compressed.mp4', 
+        alt: 'Saludo',
+        poster: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-04-saludoguanaba-poster.jpg' 
+      },
+      { 
+        type: 'image', 
+        src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024Paseo.png', 
+        alt: 'Paseo guabana republic' 
+      },
+      { 
+        type: 'video', 
+        src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-centro-compressed.mp4', 
+        alt: 'En en centro con una quiteña linda de apellifo Ger',
+        poster: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-centro-poster.jpg' 
+      },
+      { 
+        type: 'video', 
+        src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-06-cerro-compressed.mp4', 
+        alt: 'En la montañita con un angelito',
+        poster: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-06-cerro-poster.jpg' 
+      },
+      { 
+        type: 'video', 
+        src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-06-montana-compressed.mp4', 
+        alt: 'Tarde de piscina',
+        poster: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-06-montana-poster.jpg' 
+      },
+      { 
+        type: 'video', 
+        src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-07-primerano-compressed.mp4', 
+        alt: 'Nuestro Primer año del gran amor nuestro',
+        poster: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-07-primerano-poster.jpg' 
+      },
+      { 
+        type: 'video', 
+        src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-08-graduacion-compressed.mp4', 
+        alt: 'Acompañandote feliz y orgulloso de verte graduada',
+        poster: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-08-graduacion-poster.jpg' 
+      },
+      { 
+        type: 'video', 
+        src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-12-navidad-compressed.mp4', 
+        alt: 'Celebracion de navidad a mi reina linda',
+        poster: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-12-navidad-poster.jpg' 
+      },
     ]
   },
   {
     title: "Nuestras primeras veces",
     items: [
-      { type: 'image', src: '/media/foto3.jpg', alt: 'Cena romántica' },
-      { type: 'image', src: '/media/foto4.jpg', alt: 'Atardecer juntos' },
-      // Agrega más "primeras veces" aquí
+      { 
+        type: 'image', 
+        src: '/media/foto3.jpg', 
+        alt: 'Cena romántica' 
+      },
+      { 
+        type: 'image', 
+        src: '/media/foto4.jpg', 
+        alt: 'Atardecer juntos' 
+      },
     ]
   },
   {
     title: "Nuestros primeros días",
     items: [
-      { type: 'image', src: '/media/foto5.jpg', alt: 'Sonrisas compartidas' },
-      // Agrega más items de primeros días aquí
+      { 
+        type: 'image', 
+        src: '/media/foto5.jpg', 
+        alt: 'Sonrisas compartidas' 
+      },
     ]
   },
   {
     title: "Actualmente",
     items: [
-      { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/bailepamer.mp4', alt: 'Baile romántico' },
-      // Agrega más items actuales aquí
+      { 
+        type: 'video', 
+        src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/bailepamer-compressed.mp4', 
+        alt: 'Baile romántico',
+        poster: 'https://Baio99.github.io/AniversarioAdrianPamela/media/bailepamer-poster.jpg' 
+      },
     ]
   }
 ];
@@ -399,17 +514,16 @@ useEffect(() => {
                 />
               ) : (
                 <video
-                  src={item.src}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="absolute top-0 left-0 w-full h-full object-contain bg-black"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'flex';
-                  }}
-                />
+  src={item.src}
+  autoPlay
+  loop
+  muted
+  playsInline
+  loading="lazy"
+  preload="none"
+  poster={item.poster || ''}
+  className="absolute top-0 left-0 w-full h-full object-contain bg-black"
+/>
               )}
               
               {/* Fallback en caso de error */}
