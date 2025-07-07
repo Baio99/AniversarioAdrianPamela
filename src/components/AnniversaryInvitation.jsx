@@ -12,14 +12,14 @@ const AnniversaryInvitation = () => {
 
   // Archivos multimedia locales
   const mediaItems = [
-    { type: 'image', src: 'https://Baio99.github.io/AniversarioAdrianPamela/public/media/2023primermes.jpg', alt: 'Nuestro primer encuentro' },
+    { type: 'image', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2023primermes.jpg', alt: 'Nuestro primer encuentro' },
     { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/carta.mp4', alt: 'Momentos especiales' },
     { type: 'image', src: 'https://Baio99.github.io/AniversarioAdrianPamela/public/media/logo192.png', alt: 'Día en la playa' },
     { type: 'image', src: '/media/foto3.jpg', alt: 'Cena romántica' },
-    { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/cartanew.mp4', alt: 'Nuestra aventura' },
+    { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/cartanewr.mp4', alt: 'Nuestra aventura' },
     { type: 'image', src: '/media/foto4.jpg', alt: 'Atardecer juntos' },
     { type: 'image', src: '/media/foto5.jpg', alt: 'Sonrisas compartidas' },
-    { type: 'video', src: '/media/video3.mp4', alt: 'Baile romántico' },
+    { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/bailepamer.mp4', alt: 'Baile romántico' },
   ];
 
   const handleInputChange = (e) => {
@@ -32,11 +32,11 @@ const AnniversaryInvitation = () => {
 
   const validateAndSubmit = () => {
     const newErrors = {};
-    
+
     if (formData.place.toLowerCase().trim() !== 'omi') {
       newErrors.place = 'Lugar incorrecto';
     }
-    
+
     if (formData.password.toLowerCase().trim() !== 'adrianteama') {
       newErrors.password = 'Palabra clave incorrecta';
     }
@@ -103,27 +103,27 @@ const AnniversaryInvitation = () => {
               <div className="text-6xl font-bold text-rose-300 mb-4 animate-bounce">
                 2 Años
               </div>
-              
 
-<div className="max-w-xs mx-auto space-y-3 px-5 py-4 bg-white/10 rounded-lg border border-rose-200/30 backdrop-blur-xs">
-  {[
-    "Una cordial invitación para la mujer que ilumina mi vida con solo una sonrisa",
-    "Mañana quiero verte, abrazarte y ver tu belleza que cada día me enamora más",
-    "Te invito con todo mi corazón… ven tan hermosa como siempre, o aún más, si eso es posible"
-  ].map((text, index) => (
-    <p 
-      key={index}
-      className="text-lg leading-tight text-rose-50"
-      style={{
-        fontFamily: "'Great Vibes', cursive",
-        textShadow: '0 0 5px rgba(255, 182, 193, 0.7)',
-        letterSpacing: '0.5px'
-      }}
-    >
-      {text}
-    </p>
-  ))}
-</div>
+
+              <div className="max-w-xs mx-auto space-y-3 px-5 py-4 bg-white/10 rounded-lg border border-rose-200/30 backdrop-blur-xs">
+                {[
+                  "Una cordial invitación para la mujer que ilumina mi vida con solo una sonrisa",
+                  "Mañana quiero verte, abrazarte y ver tu belleza que cada día me enamora más",
+                  "Te invito con todo mi corazón… ven tan hermosa como siempre, o aún más, si eso es posible"
+                ].map((text, index) => (
+                  <p
+                    key={index}
+                    className="text-lg leading-tight text-rose-50"
+                    style={{
+                      fontFamily: "'Great Vibes', cursive",
+                      textShadow: '0 0 5px rgba(255, 182, 193, 0.7)',
+                      letterSpacing: '0.5px'
+                    }}
+                  >
+                    {text}
+                  </p>
+                ))}
+              </div>
 
 
             </div>
@@ -170,9 +170,8 @@ const AnniversaryInvitation = () => {
                     name="place"
                     value={formData.place}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border ${
-                      errors.place ? 'border-red-400' : 'border-white/30'
-                    } text-white placeholder-rose-200 focus:outline-none focus:ring-2 focus:ring-rose-400 focus:border-transparent transition-all duration-300`}
+                    className={`w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border ${errors.place ? 'border-red-400' : 'border-white/30'
+                      } text-white placeholder-rose-200 focus:outline-none focus:ring-2 focus:ring-rose-400 focus:border-transparent transition-all duration-300`}
                     placeholder="Escribe el lugar..."
                   />
                   {errors.place && (
@@ -189,9 +188,8 @@ const AnniversaryInvitation = () => {
                     name="password"
                     value={formData.password}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border ${
-                      errors.password ? 'border-red-400' : 'border-white/30'
-                    } text-white placeholder-rose-200 focus:outline-none focus:ring-2 focus:ring-rose-400 focus:border-transparent transition-all duration-300`}
+                    className={`w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border ${errors.password ? 'border-red-400' : 'border-white/30'
+                      } text-white placeholder-rose-200 focus:outline-none focus:ring-2 focus:ring-rose-400 focus:border-transparent transition-all duration-300`}
                     placeholder="Nuestra palabra especial..."
                   />
                   {errors.password && (
@@ -282,31 +280,31 @@ const AnniversaryInvitation = () => {
               <p className="text-rose-100 italic text-xl text-center mb-8">
                 "En este día tan especial..."
               </p>
-              
+
               <p className="text-justify">
-                Mi querida amor, en este día quiero decirte que estos dos años a tu lado 
-                han sido los más hermosos de mi vida. Cada momento compartido contigo 
+                Mi querida amor, en este día quiero decirte que estos dos años a tu lado
+                han sido los más hermosos de mi vida. Cada momento compartido contigo
                 se ha convertido en un tesoro invaluable que guardo en mi corazón.
               </p>
-              
+
               <p className="text-justify">
-                Tu sonrisa ilumina mis días más oscuros, tu risa es la melodía más 
-                hermosa que conozco, y tu amor es el regalo más preciado que la vida 
-                me ha dado. Contigo he aprendido que el amor verdadero no solo existe 
-                en los cuentos, sino que vive en cada pequeño gesto, en cada mirada 
+                Tu sonrisa ilumina mis días más oscuros, tu risa es la melodía más
+                hermosa que conozco, y tu amor es el regalo más preciado que la vida
+                me ha dado. Contigo he aprendido que el amor verdadero no solo existe
+                en los cuentos, sino que vive en cada pequeño gesto, en cada mirada
                 cómplice, en cada abrazo sincero.
               </p>
-              
+
               <p className="text-justify">
-                Hoy celebramos no solo dos años juntos, sino también la promesa de 
-                muchos más años llenos de aventuras, risas, sueños compartidos y 
+                Hoy celebramos no solo dos años juntos, sino también la promesa de
+                muchos más años llenos de aventuras, risas, sueños compartidos y
                 un amor que crece cada día más fuerte.
               </p>
-              
+
               <p className="text-center text-rose-200 text-xl font-bold mt-8">
                 Te amo más de lo que las palabras pueden expresar
               </p>
-              
+
               <p className="text-right text-rose-300 italic text-lg mt-6">
                 Con todo mi amor,<br />
                 Tu Adrian 💕
@@ -320,20 +318,18 @@ const AnniversaryInvitation = () => {
           <h3 className="text-2xl font-bold text-white text-center mb-8 font-serif">
             Nuestros Recuerdos
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {mediaItems.map((item, index) => (
               <div
                 key={index}
-                className={`relative rounded-2xl overflow-hidden shadow-lg transform transition-all duration-700 hover:scale-105 ${
-                  index === currentMediaIndex ? 'ring-4 ring-rose-400 scale-105' : ''
-                }`}
+                className={`relative rounded-2xl overflow-hidden shadow-lg transform transition-all duration-700 hover:scale-105 ${index === currentMediaIndex ? 'ring-4 ring-rose-400 scale-105' : ''
+                  }`}
                 style={{
                   animationDelay: `${index * 0.2}s`,
                   animationDuration: '1s'
                 }}
-              >
-                <div className="aspect-square overflow-hidden">
+              ><div className="aspect-square overflow-hidden relative">  {/* Añadido relative aquí */}
                   {item.type === 'image' ? (
                     <img
                       src={item.src}
@@ -351,14 +347,14 @@ const AnniversaryInvitation = () => {
                       loop
                       muted
                       playsInline
-                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                      className="absolute top-0 left-0 w-full h-full object-contain bg-black"  // Cambiado a object-contain y añadido bg-black
                       onError={(e) => {
                         e.target.style.display = 'none';
                         e.target.nextSibling.style.display = 'flex';
                       }}
                     />
                   )}
-                  
+
                   {/* Fallback en caso de error */}
                   <div className="w-full h-full bg-gradient-to-br from-rose-400 to-pink-400 flex items-center justify-center" style={{ display: 'none' }}>
                     <span className="text-white text-6xl">
@@ -366,15 +362,15 @@ const AnniversaryInvitation = () => {
                     </span>
                   </div>
                 </div>
-                
+
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                
+
                 <div className="absolute bottom-4 left-4 right-4">
                   <p className="text-white text-sm font-medium drop-shadow-lg">
                     {item.alt}
                   </p>
                 </div>
-                
+
                 {item.type === 'video' && (
                   <div className="absolute top-4 right-4">
                     <div className="bg-white/20 backdrop-blur-sm rounded-full p-2 animate-pulse">
@@ -382,7 +378,7 @@ const AnniversaryInvitation = () => {
                     </div>
                   </div>
                 )}
-                
+
                 {/* Overlay romántico */}
                 <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-rose-500/20 to-pink-500/20 flex items-center justify-center">
                   <Heart className="w-8 h-8 text-white animate-pulse" />
