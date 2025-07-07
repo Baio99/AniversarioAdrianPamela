@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Heart, MapPin, Lock, Music, Play, Pause } from 'lucide-react';
-// En la parte superior de tu archivo (después de los imports)
-//import Head from 'next/head';
 
 const AnniversaryInvitation = () => {
   const [currentSection, setCurrentSection] = useState('invitation');
@@ -9,6 +7,7 @@ const AnniversaryInvitation = () => {
   const [errors, setErrors] = useState({});
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
+  const videoRefs = useRef([]);
 
  const mediaSections = [
   {
@@ -144,43 +143,8 @@ const AnniversaryInvitation = () => {
         poster: 'https://Baio99.github.io/AniversarioAdrianPamela/media/2024-12-navidad-poster.jpg' 
       },
     ]
-  },
-  {
-    title: "Nuestras primeras veces",
-    items: [
-      { 
-        type: 'image', 
-        src: '/media/foto3.jpg', 
-        alt: 'Cena romántica' 
-      },
-      { 
-        type: 'image', 
-        src: '/media/foto4.jpg', 
-        alt: 'Atardecer juntos' 
-      },
-    ]
-  },
-  {
-    title: "Nuestros primeros días",
-    items: [
-      { 
-        type: 'image', 
-        src: '/media/foto5.jpg', 
-        alt: 'Sonrisas compartidas' 
-      },
-    ]
-  },
-  {
-    title: "Actualmente",
-    items: [
-      { 
-        type: 'video', 
-        src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/bailepamer-compressed.mp4', 
-        alt: 'Baile romántico',
-        poster: 'https://Baio99.github.io/AniversarioAdrianPamela/media/bailepamer-poster.jpg' 
-      },
-    ]
   }
+  
 ];
 
   const handleInputChange = (e) => {
@@ -210,18 +174,62 @@ const AnniversaryInvitation = () => {
     }
   };
 
-useEffect(() => {
-  if (currentSection === 'love-letter') {
-    // Calcula el total de items en todas las secciones
-    const totalItems = mediaSections.reduce((sum, section) => sum + section.items.length, 0);
-    
-    const interval = setInterval(() => {
-      setCurrentMediaIndex(prev => (prev + 1) % totalItems);
-    }, 4000);
-    
-    return () => clearInterval(interval);
-  }
-}, [currentSection]);
+ useEffect(() => {
+    if (currentSection === 'love-letter') {
+      // Pausar todos los videos al cambiar de sección
+      videoRefs.current.forEach(video => {
+        if (video) video.pause();
+      });
+
+      // Configurar IntersectionObserver para lazy loading de videos
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const video = entry.target;
+              video.setAttribute('playsinline', '');
+              video.setAttribute('webkit-playsinline', '');
+              video.setAttribute('muted', '');
+              video.setAttribute('preload', 'metadata');
+              
+              // Solo cargar el video cuando sea visible
+              if (video.dataset.src && !video.src) {
+                video.src = video.dataset.src;
+              }
+              
+              // Reproducir solo si está en el viewport
+              const playPromise = video.play();
+              if (playPromise !== undefined) {
+                playPromise.catch(() => {
+                  // Manejar error de reproducción automática
+                  video.muted = true;
+                  video.play();
+                });
+              }
+            } else {
+              // Pausar videos que no son visibles
+              if (entry.target) entry.target.pause();
+            }
+          });
+        },
+        {
+          rootMargin: '200px',
+          threshold: 0.1
+        }
+      );
+
+      // Observar todos los videos
+      videoRefs.current.forEach(video => {
+        if (video) observer.observe(video);
+      });
+
+      return () => {
+        videoRefs.current.forEach(video => {
+          if (video) observer.unobserve(video);
+        });
+      };
+    }
+  }, [currentSection]);
 
   const toggleMusic = () => {
     setIsPlaying(!isPlaying);
@@ -514,16 +522,20 @@ useEffect(() => {
                 />
               ) : (
                 <video
-  src={item.src}
-  autoPlay
-  loop
-  muted
-  playsInline
-  loading="lazy"
-  preload="none"
-  poster={item.poster || ''}
-  className="absolute top-0 left-0 w-full h-full object-contain bg-black"
-/>
+      ref={el => {
+  const flatIndex = sectionIndex * mediaSections[sectionIndex].items.length + itemIndex;
+  videoRefs.current[flatIndex] = el;
+}}
+      data-src={item.src}
+      loop
+      muted
+      playsInline
+      preload="none"
+      poster={item.poster || ''}
+      className="absolute top-0 left-0 w-full h-full object-contain bg-black"
+      disablePictureInPicture
+      controlsList="nodownload nofullscreen"
+    />
               )}
               
               {/* Fallback en caso de error */}
