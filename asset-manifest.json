@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/AniversarioAdrianPamela/static/css/main.3c8266b7.css",
-    "main.js": "/AniversarioAdrianPamela/static/js/main.8fafa71a.js",
+    "main.css": "/AniversarioAdrianPamela/static/css/main.7cbe132b.css",
+    "main.js": "/AniversarioAdrianPamela/static/js/main.ff24b706.js",
     "static/js/453.dc97d6fa.chunk.js": "/AniversarioAdrianPamela/static/js/453.dc97d6fa.chunk.js",
     "index.html": "/AniversarioAdrianPamela/index.html",
-    "main.3c8266b7.css.map": "/AniversarioAdrianPamela/static/css/main.3c8266b7.css.map",
-    "main.8fafa71a.js.map": "/AniversarioAdrianPamela/static/js/main.8fafa71a.js.map",
+    "main.7cbe132b.css.map": "/AniversarioAdrianPamela/static/css/main.7cbe132b.css.map",
+    "main.ff24b706.js.map": "/AniversarioAdrianPamela/static/js/main.ff24b706.js.map",
     "453.dc97d6fa.chunk.js.map": "/AniversarioAdrianPamela/static/js/453.dc97d6fa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3c8266b7.css",
-    "static/js/main.8fafa71a.js"
+    "static/css/main.7cbe132b.css",
+    "static/js/main.ff24b706.js"
   ]
 }
