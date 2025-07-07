@@ -12,11 +12,11 @@ const AnniversaryInvitation = () => {
 
   // Archivos multimedia locales
   const mediaItems = [
-    { type: 'image', src: '/media/foto1.jpg', alt: 'Nuestro primer encuentro' },
-    { type: 'video', src: '/media/carta.mp4', alt: 'Momentos especiales' },
-    { type: 'image', src: '/media/foto2.jpg', alt: 'Día en la playa' },
+    { type: 'image', src: 'https://Baio99.github.io/AniversarioAdrianPamela/public/media/2023primermes.jpg', alt: 'Nuestro primer encuentro' },
+    { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/carta.mp4', alt: 'Momentos especiales' },
+    { type: 'image', src: 'https://Baio99.github.io/AniversarioAdrianPamela/public/media/logo192.png', alt: 'Día en la playa' },
     { type: 'image', src: '/media/foto3.jpg', alt: 'Cena romántica' },
-    { type: 'video', src: '/media/video2.mp4', alt: 'Nuestra aventura' },
+    { type: 'video', src: 'https://Baio99.github.io/AniversarioAdrianPamela/media/cartanew.mp4', alt: 'Nuestra aventura' },
     { type: 'image', src: '/media/foto4.jpg', alt: 'Atardecer juntos' },
     { type: 'image', src: '/media/foto5.jpg', alt: 'Sonrisas compartidas' },
     { type: 'video', src: '/media/video3.mp4', alt: 'Baile romántico' },
